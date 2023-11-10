@@ -162,3 +162,5 @@ cython_debug/
 # Confidential information
 .secret
 secret
+
+.gitignore
