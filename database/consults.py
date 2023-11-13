@@ -1,4 +1,4 @@
-from conect import consults_manager
+from database.conect import consults_manager
 from datetime import datetime
 from datetime import timedelta
 
