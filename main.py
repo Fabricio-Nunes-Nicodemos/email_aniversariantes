@@ -20,7 +20,8 @@ def data_to_image(dict_birthdays: dict, messages: str, **kwargs) -> None:
 
         title_text += messages
 
-        birthdays_image(title=title_text, dict_birthdays=dict_birthdays, greetings=kwargs.get("greetings"), greetings2=kwargs.get("greetings2"))
+        birthdays_image(title=title_text, dict_birthdays=dict_birthdays,
+                        greetings=kwargs.get("greetings"), greetings2=kwargs.get("greetings2"))
 
 
 # Day birthday
@@ -36,7 +37,7 @@ if len(birthdays_day) > 0:
     data_to_image(birthdays_day, message, greetings=GREETINGS, greetings2=GREETINGS2)
 
 # Month birthdays
-if TODAY.day == 14:
+if TODAY.day == 1:
 
     message = " do mês de " + TODAY.strftime("%B").title()
 

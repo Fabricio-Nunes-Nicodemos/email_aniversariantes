@@ -65,7 +65,7 @@ def month_birthday() -> dict:
 
     for (index, data_in_row) in all_people.iterrows():
 
-        if data_in_row.datnas.strftime("%m") == datetime(year=2000, month=12, day=14).strftime("%m"):
+        if data_in_row.datnas.strftime("%m") == datetime.today().strftime("%m"):
 
             full_name = data_in_row.nomfun.title().strip()
             first_name, *middle, last_name = full_name.split()
