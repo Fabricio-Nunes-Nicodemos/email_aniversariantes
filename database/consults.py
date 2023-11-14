@@ -13,7 +13,7 @@ def all_employees():
     return consults_manager(sql)
 
 
-def day_birthday():
+def day_birthday() -> dict:
 
     all_people = all_employees()
     birthdays_employees = {}
@@ -30,13 +30,13 @@ def day_birthday():
     return birthdays_employees
 
 
-def weekend_birthday():
+def weekend_birthday() -> dict:
 
     all_people = all_employees()
     birthdays_employees = {}
     today = datetime.today()
 
-    if today == 4:
+    if today.weekday() == 4:
 
         saturday = today + timedelta(days=1)
         sunday = today + timedelta(days=2)
@@ -53,7 +53,7 @@ def weekend_birthday():
         return birthdays_employees
 
 
-def month_birthday():
+def month_birthday() -> dict:
 
     all_people = all_employees()
     birthdays_employees = {}

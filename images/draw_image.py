@@ -8,8 +8,8 @@ locale.setlocale(locale.LC_ALL, "pt_BR.utf8")
 def birthdays_image(**kwargs):
 
     title = kwargs.get("title")
-    greatings = kwargs.get("greatings")
-    greatings2 = kwargs.get("grearings2")
+    greetings = kwargs.get("greetings")
+    greetings2 = kwargs.get("greetings2")
 
     count = 0
     pos_y = 200
@@ -40,13 +40,9 @@ def birthdays_image(**kwargs):
 
     draw.text(xy=(330, 110), text=title, fill=(0, 51, 142), font=font_title)
 
-    if greatings and greatings2 != "":
-        draw.text(xy=(110, 545), text=greatings, fill=(137, 187, 80), font=font_greatings)
-        draw.text(xy=(160, 613), text=greatings2, fill=(137, 187, 80), font=font_greatings)
+    if greetings and greetings2 != "":
+
+        draw.text(xy=(110, 545), text=greetings, fill=(137, 187, 80), font=font_greatings)
+        draw.text(xy=(160, 613), text=greetings2, fill=(137, 187, 80), font=font_greatings)
 
     img.save("images/img_aniversariantes.png")
-
-
-if __name__ == "__main__":
-
-    birthdays_image(title="Teste02")

@@ -7,6 +7,6 @@ ENGINE = sqlalchemy.create_engine(f"oracle+cx_oracle://{secret_keys.DATABASE_USE
                                   arraysize=1000)
 
 
-def consults_manager(sql):
+def consults_manager(sql) -> pandas.DataFrame:
 
     return pandas.read_sql(sql, ENGINE)
