@@ -13,7 +13,7 @@ def birthdays_image(**kwargs):
 
     count = 0
     pos_y = 200
-    pos_x = 150
+    pos_x = 120
     dict_birthdays = kwargs.get("dict_birthdays")
 
     path_background_image = Path("images/background.png")
@@ -26,14 +26,14 @@ def birthdays_image(**kwargs):
 
     for person in dict_birthdays:
 
-        teste = dict_birthdays[person]["nome"] + " - " + dict_birthdays[person]["departamento"]
+        teste = dict_birthdays[person]["nascimento"].strftime("%d") + " - " + dict_birthdays[person]["nome"] + " - " + dict_birthdays[person]["departamento"]
 
         draw.text(xy=(pos_x, pos_y), text=teste, fill=(0, 0, 0), font=font_text)
 
-        pos_y += 45
+        pos_y += 35
 
-        if count == 10:
-            pos_x = 530
+        if count == 13:
+            pos_x = 540
             pos_y = 200
 
         count += 1
