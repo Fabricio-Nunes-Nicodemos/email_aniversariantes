@@ -6,8 +6,10 @@ TODAY = datetime.today()
 GREETINGS = "Desejamos saúde, paz e felicidades, que seja um novo ciclo repleto de sucesso\n\t\te crescimento constante..."
 GREETINGS2 = "Não se esqueçam de parabenizar os aniversariantes para ajudar a tornar este dia ainda\n\t\tmais especial!!"
 
+birthdays_day = day_birthday()
 
-def data_to_image(dict_birthdays: dict, messages: str, **kwargs):
+
+def data_to_image(dict_birthdays: dict, messages: str, **kwargs) -> None:
 
     if len(dict_birthdays) > 0:
 
@@ -22,7 +24,7 @@ def data_to_image(dict_birthdays: dict, messages: str, **kwargs):
 
 
 # Day birthday
-if len(day_birthday()) > 0:
+if len(birthdays_day) > 0:
 
     if TODAY.day < 10:
         day = f"0{TODAY.day}"
@@ -31,10 +33,10 @@ if len(day_birthday()) > 0:
 
     message = f" de {day} de {TODAY.strftime('%B').title()}"
 
-    data_to_image(day_birthday(), message, greetings=GREETINGS, greetings2=GREETINGS2)
+    data_to_image(birthdays_day, message, greetings=GREETINGS, greetings2=GREETINGS2)
 
 # Month birthdays
-if TODAY.day == 1:
+if TODAY.day == 14:
 
     message = " do mês de " + TODAY.strftime("%B").title()
 

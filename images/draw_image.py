@@ -5,7 +5,7 @@ import locale
 locale.setlocale(locale.LC_ALL, "pt_BR.utf8")
 
 
-def birthdays_image(**kwargs):
+def birthdays_image(**kwargs) -> None:
 
     title = kwargs.get("title")
     greetings = kwargs.get("greetings")
@@ -13,12 +13,12 @@ def birthdays_image(**kwargs):
 
     count = 0
     pos_y = 200
-    pos_x = 120
+    pos_x = 180
     dict_birthdays = kwargs.get("dict_birthdays")
 
     path_background_image = Path("images/background.png")
     font_title = ImageFont.truetype("C:/fonts/OpenSans_Condensed-Bold.ttf", size=32)
-    font_text = ImageFont.truetype("C:/fonts/OpenSans_Condensed-SemiBold.ttf", size=20)
+    font_text = ImageFont.truetype("C:/fonts/OpenSans_Condensed-SemiBold.ttf", size=22)
     font_greatings = ImageFont.truetype("C:/fonts/OpenSans_Condensed-SemiBold.ttf", size=24)
 
     img = Image.open(path_background_image)
