@@ -30,7 +30,7 @@ def send_email_birhtdays():
 
     msg.attach(image_attach)
 
-    with smtplib.SMTP("smtp.ulh.cloud", port=25) as connection:
+    with smtplib.SMTP(host=secret_keys.SMTP_HOST, port=secret_keys.SMTP_PORT) as connection:
 
         connection.ehlo()
         connection.starttls()
