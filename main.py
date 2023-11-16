@@ -1,6 +1,7 @@
 from database.consults import month_birthday, weekend_birthday, day_birthday
 from datetime import datetime
 from images.draw_image import birthdays_image
+from email_birthdays import send_email
 
 TODAY = datetime.today()
 GREETINGS = "Desejamos saúde, paz e felicidades, que seja um novo ciclo repleto de sucesso\n\t\te crescimento constante..."
@@ -36,6 +37,8 @@ if len(birthdays_day) > 0:
 
     data_to_image(birthdays_day, message, greetings=GREETINGS, greetings2=GREETINGS2)
 
+    send_email.send_email_birhtdays()
+
 # Month birthdays
 if TODAY.day == 1:
 
@@ -43,9 +46,13 @@ if TODAY.day == 1:
 
     data_to_image(month_birthday(), message)
 
+    send_email.send_email_birhtdays()
+
 # Weekend birthdays
 if TODAY.weekday() == 4:
 
     message = " do fim de semana"
 
     data_to_image(weekend_birthday(), message, greetings=GREETINGS, greetings2=GREETINGS2)
+
+    send_email.send_email_birhtdays()
