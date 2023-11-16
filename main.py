@@ -22,7 +22,9 @@ def data_to_image(dict_birthdays: dict, messages: str, **kwargs) -> None:
         title_text += messages
 
         birthdays_image(title=title_text, dict_birthdays=dict_birthdays,
-                        greetings=kwargs.get("greetings"), greetings2=kwargs.get("greetings2"))
+                        greetings=kwargs.get("greetings"), greetings2=kwargs.get("greetings2"),
+                        pos_x=kwargs.get("pos_x"), pos_y=kwargs.get("pos_y"),
+                        title_pos_x=kwargs.get("title_pos_x"), title_pos_y=kwargs.get("title_pos_y"))
 
 
 # Day birthday
@@ -44,7 +46,7 @@ if TODAY.day == 1:
 
     message = " do mês de " + TODAY.strftime("%B").title()
 
-    data_to_image(month_birthday(), message)
+    data_to_image(month_birthday(), message, pos_x=180, pos_y=200, title_pos_x=330, title_pos_y=110)
 
     send_email.send_email_birhtdays()
 
@@ -55,4 +57,5 @@ if TODAY.weekday() == 4:
 
     data_to_image(weekend_birthday(), message, greetings=GREETINGS, greetings2=GREETINGS2)
 
-    send_email.send_email_birhtdays()
+    if len(weekend_birthday()) > 0:
+        send_email.send_email_birhtdays()
